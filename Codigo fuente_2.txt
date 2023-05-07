@@ -1,0 +1,87 @@
+/*
+Violante Martín - 1er Dojo - Etapa 2
+
+*/
+#define LED_ROJO 12
+#define LED_AMARILLO 11
+#define LED_VERDE 10
+
+
+int buzzer = 9;
+void setup()
+{
+  pinMode(LED_ROJO, OUTPUT);
+  pinMode(LED_AMARILLO, OUTPUT);
+  pinMode(LED_VERDE, OUTPUT);
+  pinMode(buzzer, OUTPUT);
+}
+
+void zumbido_ROJO()
+{
+  
+  
+  for(int i = 0; i <= 5; i++)
+  {
+    tone(buzzer, 200, 100);
+    delay(500);
+    tone(buzzer, 200, 100);
+  	delay(500);
+  }
+}
+
+void zumbido_AMARILLO()
+{
+  
+  
+  for(int i = 0; i <= 3; i++)
+  {
+    tone(buzzer, 200, 100);
+    delay(500);
+    tone(buzzer, 200, 100);
+  	delay(500);
+  }
+}
+
+void titilo(int led, int tiempo, int valor)
+{
+  Serial.println("Entre");
+  int i;
+  for(i = 0; i <= valor; i++)
+  {
+    // Prendo el led
+    digitalWrite(led, HIGH);
+    delay(tiempo);
+    // Apago el led
+    digitalWrite(led, LOW);
+    delay(tiempo);
+  }
+}
+
+void semaforo()
+{
+  digitalWrite(LED_ROJO, HIGH);
+  zumbido_ROJO();
+  titilo(LED_ROJO, 1000, 3);
+  
+  
+  digitalWrite(LED_AMARILLO, HIGH);
+  zumbido_AMARILLO();
+  titilo(LED_AMARILLO, 1000, 3);
+  
+  digitalWrite(LED_VERDE, HIGH);
+  delay(5000); // Wait for 3000 millisecond(s)
+  titilo(LED_VERDE, 1000, 3);
+  
+  digitalWrite(LED_AMARILLO, HIGH);
+  zumbido_AMARILLO();
+  titilo(LED_AMARILLO, 1000, 3);
+}
+
+void loop()
+{
+  semaforo();
+}
+  
+
+
+
