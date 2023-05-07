@@ -1,1 +1,55 @@
-int numero
+/*
+Violante Martín - 1er Dojo - Etapa 1
+
+*/
+#define LED_ROJO 12
+#define LED_AMARILLO 11
+#define LED_VERDE 10
+
+
+int buzzer = 9;
+void setup()
+{
+  pinMode(LED_ROJO, OUTPUT);
+  pinMode(LED_AMARILLO, OUTPUT);
+  pinMode(LED_VERDE, OUTPUT);
+  pinMode(buzzer, OUTPUT);
+}
+
+void zumbido_ROJO()
+{
+  
+  
+  for(int i = 0; i <= 5; i++)
+  {
+    tone(buzzer, 200, 100);
+    delay(500);
+    tone(buzzer, 200, 100);
+  	delay(500);
+  }
+}
+
+void semaforo()
+{
+  digitalWrite(LED_ROJO, HIGH);
+  zumbido_ROJO();
+  digitalWrite(LED_ROJO, LOW);
+  delay(500); // Wait for 500 millisecond(s)
+  
+  
+  digitalWrite(LED_AMARILLO, HIGH);
+  delay(3000);
+  digitalWrite(LED_AMARILLO, LOW);
+  delay(500); // Wait for 500 millisecond(s)
+  
+  digitalWrite(LED_VERDE, HIGH);
+  delay(5000); // Wait for 3000 millisecond(s)
+  digitalWrite(LED_VERDE, LOW);
+  delay(500); // Wait for 500 millisecond(s)
+}
+
+void loop()
+{
+  semaforo();
+}
+  
