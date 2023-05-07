@@ -4,6 +4,8 @@
 
 ## Integrante
 - Martin Violante
+- Matías Skenen
+- Tobias Escobar
 
 ## Proyecto 1: Semáforo - Primera etapa
 [Primera etapa](https://i.gyazo.com/f451c7c8041f3fb59985d854d46bb6a7.png)
