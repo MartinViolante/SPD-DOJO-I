@@ -1,5 +1,5 @@
 # DOJO-I Primera etapa
-![image](./img/ArduinoTinkercad.jpg)
+![image](https://raw.githubusercontent.com/iagovalverde/EjemploDocumentacion/main/img/ArduinoTinkercad.jpg)
 
 
 ## Integrante
